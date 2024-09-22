@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <ul>
+        {% for name in placeholder %}
+            <li>{{ name }} is registered for {{ placeholder[name] }}</li> <!--{{name}} represents the name attribute in our form and registrants represents the placeholder in our app.py file-->
+        {% endfor %}
+    </ul>
+
+{% endblock %}

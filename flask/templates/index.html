@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action = "/success" method = "post"> <!--Post so user doesn't register twice-->
+        <input type = "text" placeholder ="name" name ="name" autofocus autocomplete ="off" required>
+        <select name = "team">
+            <option disabled selected>Teams</option>
+            {% for team in teams %}
+                <option value = "{{team}}">{{team}}</option>
+            {% endfor %}
+        </select>
+        <button type = "submit">Register</button>
+    </form>
+{% endblock %}

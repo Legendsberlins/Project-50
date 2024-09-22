@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <input autocomplete = "off" autofocus placeholder = "Query" type = "search">
+        <ul></ul>
+
+        <script>
+            let input = document.querySelector('input');
+            input.addEventListener('input', async function(){
+                let response = await fetch('/search?q=' + input.value); /*fetch is a JS function that fetches data*/
+                let shows = await response.text();
+                document.querySelector('ul').innerHTML = shows;
+            });
+        </script>
+    </body>
+</html>
